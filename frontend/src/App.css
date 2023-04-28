@@ -62,3 +62,16 @@ a > i,
 a > span {
   transition: color 0.3s ease-in-out;
 }
+
+.scrollable-div {
+  overflow-y: auto;
+  height: 100vh
+  /* overflow: scroll; */
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  height: 100vh;
+}

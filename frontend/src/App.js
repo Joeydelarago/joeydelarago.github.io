@@ -75,7 +75,7 @@ function Home() {
 
 function Projects() {
   return (
-    <div className="container-fluid d-flex justify-content-end" style={{marginRight: 35, width: "100%", position: "fixed", bottom: 0, right: 0}}>     
+    <div className="container-fluid d-flex justify-content-end" style={{marginRight: 35, width: "100%", height: "100%"}}>
       <ul className="list-unstyled">
         {projectItems.map((item) => projectListItem(item))}
       </ul>
@@ -94,7 +94,7 @@ function Projects() {
 function Contact() {
 
   return (
-    <div className="container-fluid d-flex justify-content-end" style={{marginRight: 35, width: "100%", position: "fixed", bottom: 0, right: 0}}>      
+    <div className="container-fluid d-flex justify-content-end" style={{marginRight: 35, width: "100%"}}>      
       <ul>
         <a href="https://www.linkedin.com/in/joeydelarago/" style={{ fontSize: 65, display: 'inline-block' }}>
           <span style={{ verticalAlign: 'middle', marginRight: 10 }}>LinkedIn</span>
@@ -122,27 +122,33 @@ class App extends Component {
 
   render() {
     return (      
-    <main> 
-        <script src="background.js"></script> 
+    <div>
+      <script src="background.js"></script> 
+      <div className="scrollable-div"> 
         <BrowserRouter> 
           <div className="bg-primary-new text-white p-5 text-left" style={{marginBottom: -10}}>
             <h1>Joey de l'Arago</h1>
             <h5>Software Engineer & Creative</h5>
           </div>
           
+
           <div className="container-fluid" style={{marginLeft: 37}}> 
             <ul className="list-unstyled">
               {this.renderMenu()}
             </ul>
           </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects/>}/>
-            {/* <Route path="/about" element={<About />} /> */}
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </BrowserRouter> 
-      </main>
+
+          <div className="page-content" style={{marginLeft: 37, marginTop: 50}}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects/>}/>
+              {/* <Route path="/about" element={<About />} /> */}
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+        </BrowserRouter>  
+      </div>
+    </div>
     )
   }
 }
