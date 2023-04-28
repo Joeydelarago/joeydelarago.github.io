@@ -9,6 +9,8 @@ const sketch = (p) => {
 	let color2 = (0, 155, 50)
 	let color3 = (0, 155, 50);
 	let change = (0, 30, 0);
+	let width = p.windowWidth;
+	let height = p.windowHeight;
 
 	p.setup = () => {
 		p.createCanvas(p.windowWidth, p.windowHeight);
@@ -16,7 +18,14 @@ const sketch = (p) => {
 	}
 
 	p.windowResized = () => {
-		p.resizeCanvas(p.windowWidth, p.windowHeight);
+
+		if (p.windowWidth - width > 50 && p.windowHeight - height > 50) 
+		{
+			p.resizeCanvas(p.windowWidth, p.windowHeight);
+
+			let width = p.windowWidth;
+			let height = p.windowHeight;
+		}
 	}
 
 	function draw_line(counter) {
