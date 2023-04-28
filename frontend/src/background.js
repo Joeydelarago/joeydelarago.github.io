@@ -9,11 +9,11 @@ const sketch = (p) => {
 	let color2 = (0, 155, 50)
 	let color3 = (0, 155, 50);
 	let change = (0, 30, 0);
-	let width = p.windowWidth;
-	let height = p.windowHeight;
+	let width = Math.round(p.windowWidth * 1.2); //This is for mobile where scrolling down causes a refresh of the screen
+	let height = Math.round(p.windowHeight * 1.2);
 
 	p.setup = () => {
-		p.createCanvas(p.windowWidth, p.windowHeight);
+		p.createCanvas(width, height);
 		p.background(100);
 	}
 
