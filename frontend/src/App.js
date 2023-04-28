@@ -14,10 +14,10 @@ const menuItems = [
     title: "Projects",
     link: "/projects",
   },
-  {
-    title: "About",
-    link: "/about",
-  },
+  // {
+  //   title: "About",
+  //   link: "/about",
+  // },
   {
     title: "Contact",
     link: "/contact",
@@ -50,7 +50,7 @@ const projectItems = [
 function menuBarItem (item) {
   return (
     <li>
-      <Link to={item.link} style={{color: "white"}}>
+      <Link to={item.link}>
         <h2 style={{"fontWeight": "bold"}}>
           {item.title}
         </h2>
@@ -62,9 +62,9 @@ function menuBarItem (item) {
 function projectListItem(item) {
   return (
     <li>
-        <a href={item.link} style={{color: "white"}}>
-          <h2 style={{color: "white", "font-size": 65}}>{item.title}</h2>
-        </a>
+      <a href={item.link}>
+        <h2 style={{"font-size": 65}}>{item.title}</h2>
+      </a>
     </li>
   )
 }
@@ -83,16 +83,26 @@ function Projects() {
   )
 }
 
-function About() {
-  return (
-    <div class="container-fluid d-flex justify-content-end" style={{marginRight: 35, marginLeft: 37, width: "100%"}}>     
-      About
-    </div>
-    );
-}
+// function About() {
+//   return (
+//     <div class="container-fluid d-flex justify-content-end" style={{marginRight: 35, marginLeft: 37, width: "100%"}}>     
+//       About
+//     </div>
+//     );
+// }
 
 function Contact() {
-  return <h1>Contact</h1>;
+
+  return (
+    <div className="container-fluid d-flex justify-content-end" style={{marginRight: 35, width: "100%", position: "fixed", bottom: 0, right: 0}}>      
+      <ul>
+        <a href="https://www.linkedin.com/in/joeydelarago/" style={{ fontSize: 65, display: 'inline-block' }}>
+          <span style={{ verticalAlign: 'middle', marginRight: 10 }}>LinkedIn</span>
+          <i className="material-icons" style={{ verticalAlign: 'middle', "font-size": 65 }}>link</i>
+        </a>
+      </ul>
+    </div>
+  );
 }
 
 class App extends Component {
@@ -115,12 +125,12 @@ class App extends Component {
     <main> 
         <script src="background.js"></script> 
         <BrowserRouter> 
-          <div class="bg-primary-new text-white p-5 text-left" style={{marginBottom: -10}}>
+          <div className="bg-primary-new text-white p-5 text-left" style={{marginBottom: -10}}>
             <h1>Joey de l'Arago</h1>
             <h5>Software Engineer & Creative</h5>
           </div>
           
-          <div class="container-fluid" style={{marginLeft: 37}}> 
+          <div className="container-fluid" style={{marginLeft: 37}}> 
             <ul className="list-unstyled">
               {this.renderMenu()}
             </ul>
@@ -128,7 +138,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects/>}/>
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter> 

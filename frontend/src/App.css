@@ -45,3 +45,20 @@ h1 {
 .bg-primary-new {
   background-color: transparent;
 }
+
+a {
+  color: white;
+  text-decoration: none !important;
+}
+ 
+a:hover > h2,
+a:hover > span,
+a:hover > i{
+  color: #545454;
+}
+
+a > h2,
+a > i,
+a > span {
+  transition: color 0.3s ease-in-out;
+}
