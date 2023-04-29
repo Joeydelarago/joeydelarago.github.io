@@ -94,7 +94,7 @@ function Projects() {
 function Contact() {
 
   return (
-    <div className="container-fluid d-flex justify-content-end page-item" style={{marginRight: 35, width: "100%"}}>      
+    <div className="container-fluid d-flex justify-content-end page-item" style={{marginRight: 35, width: "100%", height: "100%"}}>      
       <ul>
         <a href="https://www.linkedin.com/in/joeydelarago/" style={{ fontSize: 65, display: 'inline-block' }}>
           <span style={{ verticalAlign: 'middle', marginRight: 10 }}>LinkedIn</span>
