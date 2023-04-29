@@ -66,12 +66,14 @@ a > span {
 .scrollable-div {
   overflow-y: auto;
   height: 100vh
-  /* overflow: scroll; */
 }
 
 .page-content {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  height: 100vh;
+}
+
+.page-item {
+  align-items: self-end;
 }
