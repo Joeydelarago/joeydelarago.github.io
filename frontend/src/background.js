@@ -9,8 +9,8 @@ const sketch = (p) => {
 	let color2 = (0, 155, 50)
 	let color3 = (0, 155, 50);
 	let change = (0, 30, 0);
-	let width = Math.round(p.windowWidth * 1.2); //This is for mobile where scrolling down causes a refresh of the screen
-	let height = Math.round(p.windowHeight * 1.2);
+	let width = p.windowWidth; 
+	let height = Math.round(p.windowHeight * 1.2); //This is for mobile where scrolling down causes a refresh of the screen sometimes
 
 	p.setup = () => {
 		p.createCanvas(width, height);
@@ -18,13 +18,11 @@ const sketch = (p) => {
 	}
 
 	p.windowResized = () => {
-
-		if (p.windowWidth - width > 50 && p.windowHeight - height > 50) 
+		if (p.windowHeight - height > 50) 
 		{
 			p.resizeCanvas(p.windowWidth, p.windowHeight);
-
-			let width = p.windowWidth;
-			let height = p.windowHeight;
+			width = p.windowWidth;
+			height = p.windowHeight;
 		}
 	}
 
@@ -41,7 +39,7 @@ const sketch = (p) => {
 	function makeVertex(counter, offset_x, offset_y) {
 		p.beginShape();
 		for (let i=0; i<=p.height; i+=1) {
-			let x = p.noise(((i+(counter)))/100)*p.width;
+			let x = p.noise(((i+(counter)))/100)*width;
 			p.curveVertex(x + offset_x, i + offset_y);
 		}
 		p.endShape();
